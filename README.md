@@ -1,7 +1,6 @@
 # practice
 
 [![Build Status](https://travis-ci.org/zrma/clojure.svg?branch=master)](https://travis-ci.org/zrma/clojure)
-[![Quality Gate](https://sonar.team504.com/api/badges/gate?key=clojure)](https://sonar.team504.com/dashboard?id=clojure)
 [![Coverage Status](https://coveralls.io/repos/github/zrma/clojure/badge.svg?branch=master)](https://coveralls.io/github/zrma/clojure?branch=master)
 [![Codecov Status](https://codecov.io/gh/zrma/clojure/branch/master/graphs/badge.svg)](https://codecov.io/gh/zrma/clojure)
 

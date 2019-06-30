@@ -19,6 +19,8 @@ fmt:
 lint:
 	lein cljfmt check
 	lein eastwood
+	lein kibit
+	lein ancient
 
 all: fmt lint test cov
 
