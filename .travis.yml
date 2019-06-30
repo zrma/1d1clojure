@@ -11,7 +11,7 @@ script:
 
 cache:
   directories:
-  - "$HOME/.clj"
+  - '$HOME/.m2'
 
 jdk:
   - openjdk9
@@ -19,7 +19,7 @@ jdk:
 
 after_success:
   - make cover
-  - CODECOV_TOKEN=${CODECOV_TOKEN} bash <(curl -s https://codecov.io/bash) -f target/coverage/codecov.json
+  - bash <(curl -s https://codecov.io/bash) -f target/coverage/codecov.json
 
 env:
   global:
