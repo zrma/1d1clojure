@@ -25,3 +25,9 @@
                            (println x)))
            (with-out-str (doseq [x (list-replication 3 [1 2 3])]
                            (println x)))))))
+
+(deftest filter-array-test
+  (testing ["Filter Array"
+            "https://www.hackerrank.com/challenges/fp-filter-array/problem"]
+    (is (= [2 1 0]
+           (filter-array 3 [10 9 8 2 7 5 1 3 0])))))
