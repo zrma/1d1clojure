@@ -8,11 +8,14 @@
 
 (defn hello-word-n-times [n]
   (dorun
-   (for [_ (range n)] (println "Hello World"))))
+   (for [_ (range n)]
+     (println "Hello World"))))
 
 (defn list-replication [n l]
   (mapcat (partial repeat n) l))
 
-(defn filter-array
-  [delim l]
+(defn filter-array [delim l]
   (filter #(> delim %) l))
+
+(defn filter-positions-in-a-list [l]
+  (take-nth 2 (rest l)))
