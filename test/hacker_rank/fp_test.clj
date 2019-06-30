@@ -19,3 +19,12 @@
             "https://www.hackerrank.com/challenges/fp-hello-world-n-times/problem"]
     (is (= (with-out-str (dorun (for [_ (range 3)] (println "Hello World"))))
            (with-out-str (hello-word-n-times 3))))))
+
+
+(deftest list-replication-test
+  (testing ["List Replication"
+            "https://www.hackerrank.com/challenges/fp-list-replication/problem"]
+    (is (= (with-out-str (doseq [x (mapcat (partial repeat 3) [1 2 3])]
+                           println x))
+           (with-out-str (doseq [x (list-replication 3 [1 2 3])]
+                           println x))))))

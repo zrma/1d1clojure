@@ -9,3 +9,6 @@
 (defn hello-word-n-times [n]
   (dorun
     (for [_ (range n)] (println "Hello World"))))
+
+(defn list-replication [n l]
+  (mapcat (partial repeat n) l))
