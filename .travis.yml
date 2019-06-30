@@ -10,7 +10,6 @@ cache:
   directories:
   - "$HOME/.m2"
 jdk:
-- openjdk9
 - openjdk11
 after_success:
 - make cover
