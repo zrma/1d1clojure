@@ -1,5 +1,7 @@
 # practice
 
+[![Build Status](https://travis-ci.org/zrma/clojure.svg?branch=master)](https://travis-ci.org/zrma/clojure)
+
 A Clojure library designed to ... well, that part is up to you.
 
 ## Usage
