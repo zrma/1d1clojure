@@ -1,27 +1,27 @@
 language: clojure
 lein: 2.9.1
 sudo: false
-
 before_script:
-  - make fmt
-
+- make fmt
 script:
-  - make lint
-  - make cov
-
+- make lint
+- make cov
 cache:
   directories:
-  - '$HOME/.m2'
-
+  - "$HOME/.m2"
 jdk:
-  - openjdk9
-  - openjdk11
-
+- openjdk9
+- openjdk11
 after_success:
-  - make cover
-  - bash <(curl -s https://codecov.io/bash) -f target/coverage/codecov.json
-
+- make cover
+- bash <(curl -s https://codecov.io/bash) -f target/coverage/codecov.json
+after_script:
+- sonar-scanner -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN
+addons:
+  sonarcloud: true
 env:
   global:
   - secure: cwofxPGPt4ODTO/qiewxfkotrNMFYnG4wYMT0SoAQ3eVRUGYgTlo+3WKRQ5rljdIMbDRNeu8ZBOUbfIbYPIND2Sy4ezgzlulV2dlUigJA6tV3TSG6/fzNwbGYQkpy5/cTQ2rI5dtHf/mmKhfTnnwFVp/mC9KCdZ5f800+m1lCU/286n3iOs+Zj5KCRdXHT97pqKteCljXF19jMFSM9++QJITU7vkxhRSGSAa0sd+l3aKvaFxCMPS8ZHez5BFvtf5G/SVfM1ktJazHPEBKxWIgVUKA8U4aN4HMArrM1weECUDBJMBozF9JskGK01t7yoHFMYDTrwlc4olZQbwj9mf/pSsWyy4tKdx1PQFK0v+FqgXJVCQDocyegGZbHjTve6v1fZXVPPkL+wigsDlvbV12G114jMVLxiNh/KVV9v4gdNsQTNpRvfDXz9QZjIgQhXLYUW/QpRs6AJheNIXatZ8ZK01kQU7Sffb1F0nOj/dys5dnYUnU4PtAMhKaeeTJzG4rrU36lw1HuXuMnpKprrvnUHSz74FN52Iii8HFcZteyB9ydGX7oyepQrrqy7iMLVIqDd5pGeB0Ob/2xk7l8B7eSinfckYyVJz58+SvuU9/jRRHjyoPMdpSbMiFyqeD4M2Wd0EgNAiXIvLRUOILDGK2vW2kNCEHe01SAxEXPQWwLA=
   - secure: osffvncBl6PTPSZY4Pn2SGc7dhz5Ak0E/L789Q2X3H1DJugpEsUc7bxXxdUc6F8+kiWbcKDGSfjP/6EuzxTD7O4uw4Xt7AtjFVbB11oWL93aBlzXJfiax7Z60NfwKyBIDU307DYPzLvZZdR3P13FJAPuxZC0+/R/CAD/6ueXuXIcy+y0Rggll+O8UyNgmtDpgr5bx126c6sD/5YLYo7kYdpzCSM3fME5F4RPd7ZP2Mx9tr9KKwrPs645NoyehYH5pnMG0YNtb3etlJv9n+pUSXb5Nhs2DNcz0njIysRwhLy3WuAftr/ZcAFDYPd5rSzJ9qn6YH3Phcy/eRTOIa2lVu7DBBnOVEAGpAqWus939IF/kQRSD+a+sdc++gBwPqhQ8vwrZoi1b5FkarIjSr1lCVDa0eA6koX+4SYbuyFVTDdYNkiWMz06aClgd74aSSCEn/pkBpREjZGyyoEXzS8AsxrupX8Nsp4hFhJbAmPGzwR9SdPrwf+GASDiYFsdZIgP6R7gHqWhLkF0dYMLwcMTdHz8bNczzlsABMAduijGebW6dTYkllHyxp30T6GtajmYs+cVun5bXE9BcMbzIHMKAcjAXH5HtMLwEEqyJh1nK9q3//TEpdXSHOVCxc+6tx23wk92LXrN+8wpGXP4jwgep0Hfyzg0KI7Wb7S6bbOfLG0=
+  - secure: TB+fWKUlrq+FYDdvIKsWL2OIvhyOALqdiW8FlcVA3MdvHhdgpTyNX25pbis7gtyKvIGDKxNdX7AJAYTDl+a+NNoeb2t9kACXKTdb1ezoaHYb0xrJrDO6doS7EljHY9ZsF3vEcVswm64S6m+Ts2P/cBUi2nBEkx6CUUh+UqVoOgN4rh6KliESh+ud4AokKprfgVvOqFOakcneQfx3Hgc7vxdeonRagUxXhQlQCKARLWOX8lj9ryFO6UivdYpIhUr9oQ8f21xObaIh6NpkMZxrlcAEz1DEDR5AHL841Ic3nPbBDkgvjQ+wqfdCcfPlabRb1+G0Xx0tp0BXLX3T4jwlyMh/oopq1U/MsnpcFWhE7u/V8TcCtaaAA4EnODGGMD3NHgdM+0DxOR6FryXUEcWzOOiTGUEReHbCrFe03KPwvHrp95LF7p+my8QPJmBZv9J8MYDMqcERarUb2OYysePhSoUrS5Te0rODYmxdW58lYuQLoy+5wQpKIQyqFXzyc3stM4ZerRCQ13FqHf2ryBpHuxteh3w3T3rZ4lf9roxgVKVCz1XgBiMRNBSyHyt2bCL++Wlxy+dK5LvDRJippcBuIxlR1/v+kHsGdwAZEwLPyFKQSmkE2sHSJsg5V50srrNnPjT8QJwhtGirp0GCEE00ped5IZgmOe8iEOIVIY9XZgo=
+  - secure: Jv6gP6by6UKjzOE60TygZkwLQvC50wAmmQ1m1Qzy651NofxDYFX18p0RweqOLDjkDwPtNHTfRjwjYYombiiGdszdqzLW1fxUWmPxNK3qgLfY6JeG89JGvMXimXG10kHVt44Y9bKSow8EgeWgRMxWYmvdQUYg5d3R9rwuEFGavdEqV81YBGO7pB8WCWeetd5byg4yDlDMgR26ipx944TAB/iJpaE0i80YvV2mJkFMQt8N2anRPxo5HYsfDcmhdcT+ak5V0s6IWj+1jOlHhHLH8T+FagHIRFMvKddtM5doCv66HtifWCBWANOs01gT65DobKHBhi7QmPLZUUzT4Tv7XMSdKGh7EuTEeLxI/8uRLgzJFOlLuDdtoKMob5xn11ku3DDf9c6tHLM+PrMTIh0SWAIJcvNT7oesVDQ7IN4lVr+QZsRCViBBQYtvMoPFW3GQx2B9Th2GglLwAKvtS35dKBvEKd5quqI21ar3wXlXU6MvmTCbjN814pO8EI+MqMUSBugbabT2j2YRBwAUhBwvc3hU3UhEaiwPywA6/ujrVJr/n2pTVsa7i300AxeakNEm2B7IVB/SlViF00HIrnx04nBgJhEnYpeGcr9cjbDXeQcGD3UwwadO9IsnR5l1Yy9mFMM3JoZtnfRX3cv9RKwnWlWTs/cZdRjnWC+mQ0DpugA=
