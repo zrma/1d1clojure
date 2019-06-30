@@ -25,6 +25,6 @@
   (testing ["List Replication"
             "https://www.hackerrank.com/challenges/fp-list-replication/problem"]
     (is (= (with-out-str (doseq [x (mapcat (partial repeat 3) [1 2 3])]
-                           println x))
+                           (println x)))
            (with-out-str (doseq [x (list-replication 3 [1 2 3])]
-                           println x))))))
+                           (println x)))))))
