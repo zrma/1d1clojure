@@ -1,6 +1,7 @@
 # practice
 
 [![Build Status](https://travis-ci.org/zrma/clojure.svg?branch=master)](https://travis-ci.org/zrma/clojure)
+[![Codecov Status](https://codecov.io/gh/zrma/clojure/branch/master/graphs/badge.svg)](https://codecov.io/gh/zrma/clojure)
 
 A Clojure library designed to ... well, that part is up to you.
 
