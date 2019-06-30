@@ -7,6 +7,9 @@
   :repl-options {:init-ns hacker-rank.fp}
   :plugins [
             [jonase/eastwood "0.3.5"]
+            [lein-kibit "0.1.6"]
+            [lein-ancient "0.6.15"]
+            [lein-nvd "1.0.0"]
             [lein-cloverage "1.1.1"]
             [lein-cljfmt "0.6.4"]
             ])
