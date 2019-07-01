@@ -22,3 +22,6 @@
 
 (defn array-of-n-elements [n]
   (range n))
+
+(defn reverse-a-list [n]
+  (reverse n))

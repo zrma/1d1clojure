@@ -49,3 +49,9 @@
             "https://www.hackerrank.com/challenges/fp-array-of-n-elements/problem"]
     (is (= [0 1 2 3]
            (array-of-n-elements 4)))))
+
+(deftest reverse-a-list-test
+  (testing ["Reverse a List"
+            "https://www.hackerrank.com/challenges/fp-reverse-a-list/problem"]
+    (is (= [0 28 4 18 17 26 28 3 22 19]
+           (reverse-a-list [19 22 3 28 26 17 18 4 28 0])))))
