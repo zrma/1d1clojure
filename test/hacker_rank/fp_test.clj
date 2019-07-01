@@ -43,3 +43,9 @@
             "https://www.hackerrank.com/challenges/fp-filter-positions-in-a-list/problem"]
     (is (= [5 4 7 8]
            (filter-positions-in-a-list [2 5 3 4 6 7 9 8])))))
+
+(deftest array-of-n-elements-test
+  (testing ["Array Of N Elements"
+            "https://www.hackerrank.com/challenges/fp-array-of-n-elements/problem"]
+    (is (= [0 1 2 3]
+           (array-of-n-elements 4)))))

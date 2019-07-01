@@ -19,3 +19,6 @@
 
 (defn filter-positions-in-a-list [l]
   (take-nth 2 (rest l)))
+
+(defn array-of-n-elements [n]
+  (range n))
