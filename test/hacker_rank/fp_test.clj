@@ -55,3 +55,9 @@
             "https://www.hackerrank.com/challenges/fp-reverse-a-list/problem"]
     (is (= [0 28 4 18 17 26 28 3 22 19]
            (reverse-a-list [19 22 3 28 26 17 18 4 28 0])))))
+
+(deftest sum-of-odd-elements-test
+  (testing ["Sum of Odd Elements"
+            "https://www.hackerrank.com/challenges/fp-sum-of-odd-elements/problem"]
+    (is (= 16
+           (sum-of-odd-elements [3 2 4 6 5 7 8 0 1])))))

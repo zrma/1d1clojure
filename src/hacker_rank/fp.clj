@@ -25,3 +25,6 @@
 
 (defn reverse-a-list [n]
   (reverse n))
+
+(defn sum-of-odd-elements [l]
+  (reduce + (filter #(odd? %) l)))
