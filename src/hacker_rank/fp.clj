@@ -28,3 +28,6 @@
 
 (defn sum-of-odd-elements [l]
   (reduce + (filter #(odd? %) l)))
+
+(defn list-length [l]
+  (count l))

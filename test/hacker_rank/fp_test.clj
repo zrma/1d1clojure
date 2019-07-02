@@ -61,3 +61,9 @@
             "https://www.hackerrank.com/challenges/fp-sum-of-odd-elements/problem"]
     (is (= 16
            (sum-of-odd-elements [3 2 4 6 5 7 8 0 1])))))
+
+(deftest list-length-test
+  (testing ["List Length"
+            "https://www.hackerrank.com/challenges/fp-list-length/problem"]
+    (is (= 10
+           (list-length [2 5 1 4 3 7 8 6 0 9])))))
