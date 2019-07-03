@@ -31,3 +31,6 @@
 
 (defn list-length [l]
   (count l))
+
+(defn update-list [l]
+  (map (fn [x] (if (<= 0 x) x (- x))) l))

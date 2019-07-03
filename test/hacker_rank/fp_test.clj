@@ -67,3 +67,9 @@
             "https://www.hackerrank.com/challenges/fp-list-length/problem"]
     (is (= 10
            (list-length [2 5 1 4 3 7 8 6 0 9])))))
+
+(deftest update-list-test
+  (testing ["Update List"
+            "https://www.hackerrank.com/challenges/fp-update-list/problem"]
+    (is (= [2 4 3 1 23 4 54]
+           (update-list [2 -4 3 -1 23 -4 -54])))))
