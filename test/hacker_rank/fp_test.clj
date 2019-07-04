@@ -73,3 +73,24 @@
             "https://www.hackerrank.com/challenges/fp-update-list/problem"]
     (is (= [2 4 3 1 23 4 54]
            (update-list [2 -4 3 -1 23 -4 -54])))))
+
+(deftest fact-test
+  (testing ["utility - factorial"]
+    (is (= [1 2 6 24 120]
+           (map fact [1 2 3 4 5])))))
+
+(deftest exp-test
+  (testing ["utility - exponential"]
+    (is (= [2 4 8 16 32]
+           (map (fn [n] (exp 2 n)) [1 2 3 4 5])))))
+
+(deftest round-test
+  (testing ["utility - round"]
+    (is (= [0.001 10.1235 9.5556]
+           (map (partial round 4) [0.001 10.123456 9.555556])))))
+
+(deftest evaluating-exponential-test
+  (testing ["Evaluating e^x"
+            "https://www.hackerrank.com/challenges/eval-ex/problem"]
+    (is (= [2423600.1887 143.6895 1.6487 0.6065]
+           (map evaluating-exponential [20.0000 5.0000 0.5000 -0.5000])))))

@@ -34,3 +34,28 @@
 
 (defn update-list [l]
   (map (fn [x] (if (<= 0 x) x (- x))) l))
+
+(defn fact [x]
+  (loop [n x
+         v 1]
+    (if (= n 1)
+      v
+      (recur (dec n) (* v n)))))
+
+(defn exp [x e]
+  (loop [n e
+         v x]
+    (if (= n 1)
+      v
+      (recur (dec n) (* x v)))))
+
+(defn round [precision d]
+  (let [factor (Math/pow 10 precision)]
+    (/ (Math/round (* d factor)) factor)))
+
+(defn evaluating-exponential [x]
+  (loop [n 9
+         v 1.0]
+    (if (= n 1)
+      (round 4 (+ v (/ (exp x n) (fact n))))
+      (recur (dec n) (+ v (/ (exp x n) (fact n)))))))
