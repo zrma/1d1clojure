@@ -54,8 +54,8 @@
     (/ (Math/round (* d factor)) factor)))
 
 (defn evaluating-exponential [x]
-  (loop [n 9
+  (loop [n 10
          v 1.0]
     (if (= n 1)
-      (round 4 (+ v (/ (exp x n) (fact n))))
-      (recur (dec n) (+ v (/ (exp x n) (fact n)))))))
+      (round 4 v)
+      (recur (dec n) (+ v (/ (exp x (- n 1)) (fact (- n 1))))))))
