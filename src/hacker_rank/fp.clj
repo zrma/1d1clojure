@@ -58,4 +58,4 @@
          v 1.0]
     (if (= n 1)
       (round 4 v)
-      (recur (dec n) (+ v (/ (exp x (- n 1)) (fact (- n 1))))))))
+      (recur (dec n) (+ v (/ (exp x (dec n)) (fact (dec n))))))))
