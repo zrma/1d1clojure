@@ -42,13 +42,6 @@
       v
       (recur (dec n) (* v n)))))
 
-(defn exp [x e]
-  (loop [n e
-         v x]
-    (if (= n 1)
-      v
-      (recur (dec n) (* x v)))))
-
 (defn round [precision d]
   (let [factor (Math/pow 10 precision)]
     (/ (Math/round (* d factor)) factor)))
@@ -58,4 +51,4 @@
          v 1.0]
     (if (= n 1)
       (round 4 v)
-      (recur (dec n) (+ v (/ (exp x (dec n)) (fact (dec n))))))))
+      (recur (dec n) (+ v (/ (Math/pow x (dec n)) (fact (dec n))))))))

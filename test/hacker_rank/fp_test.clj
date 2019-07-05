@@ -79,11 +79,6 @@
     (is (= [1 2 6 24 120]
            (map fact [1 2 3 4 5])))))
 
-(deftest exp-test
-  (testing ["utility - exponential"]
-    (is (= [2 4 8 16 32]
-           (map (fn [n] (exp 2 n)) [1 2 3 4 5])))))
-
 (deftest round-test
   (testing ["utility - round"]
     (is (= [0.001 10.1235 9.5556]
