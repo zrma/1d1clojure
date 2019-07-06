@@ -89,3 +89,15 @@
             "https://www.hackerrank.com/challenges/eval-ex/problem"]
     (is (= [2423600.1887 143.6895 1.6487 0.6065]
            (map evaluating-exponential [20.0000 5.0000 0.5000 -0.5000])))))
+
+(deftest algebraic-expr-test
+  (testing ["utility"
+            "algebraic-expr"]
+    (is (= [15.0 6524928.0]
+           (map #(algebraic-expr [1 2 3 4 5] [6 7 8 9 10] %) [1 4])))))
+
+(deftest area-under-curves-and-volume-of-revolving-a-curve-test
+  (testing ["Area Under Curves and Volume of Revolving a Curve"
+            "https://www.hackerrank.com/challenges/area-under-curves-and-volume-of-revolving-a-curv/problem"]
+    (is (= [414.02299999997854 36024.18118228868]
+           (area-under-curves-and-volume-of-revolving-a-curve [1 2] [0 1] [2 20])))))

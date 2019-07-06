@@ -35,20 +35,46 @@
 (defn update-list [l]
   (map (fn [x] (if (<= 0 x) x (- x))) l))
 
-(defn fact [x]
-  (loop [n x
-         v 1]
-    (if (= n 1)
-      v
-      (recur (dec n) (* v n)))))
+(defn fact [n]
+  (->> (inc n)
+       (range)
+       (rest)
+       (reduce *)))
 
-(defn round [precision d]
+(defn round [precision n]
   (let [factor (Math/pow 10 precision)]
-    (/ (Math/round (* d factor)) factor)))
+    (/ (Math/round (* n factor)) factor)))
 
-(defn evaluating-exponential [x]
-  (loop [n 10
-         v 1.0]
-    (if (= n 1)
-      (round 4 v)
-      (recur (dec n) (+ v (/ (Math/pow x (dec n)) (fact (dec n))))))))
+(defn evaluating-exponential [n]
+  (loop [i 10
+         res 1.0]
+    (if (= i 1)
+      (round 4 res)
+      (recur (dec i) (+ res (/ (Math/pow n (dec i)) (fact (dec i))))))))
+
+(defn algebraic-expr [coefficients exponents x]
+  (reduce-kv (fn [res coefficient exponent]
+               (->> exponent
+                    (Math/pow x)
+                    (* coefficient)
+                    (+ res)))
+             0.0 (zipmap coefficients exponents)))
+
+;; 콘솔 읽기 유틸 함수
+;
+;(require '[clojure.string :as str])
+;(defn read-split []
+;  (map #(Long/parseLong %) (-> (read-line)
+;                               (str/split #" "))))
+
+(defn area-under-curves-and-volume-of-revolving-a-curve [a b [left right']]
+  (let [delta 0.001
+        right (+ right' delta)]
+    (vector (* delta
+               (reduce + (map #(algebraic-expr a b %)
+                              (range left right delta))))
+            (* Math/PI
+               (reduce + (map #(-> (algebraic-expr a b %)
+                                   (Math/pow 2)
+                                   (* delta))
+                              (range left right delta)))))))
