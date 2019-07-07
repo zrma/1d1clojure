@@ -50,3 +50,13 @@
 = (3+1)  
 = 4  
 
+## [Lambda Calculus - Evaluating Expressions #2](https://www.hackerrank.com/challenges/lambda-calculus-understanding-the-syntax/problem)  
+
+* (λx.x+1)((λy.y+2)3)  
+
+(λx.x+1)((λy.y+2)3)  
+= (λx.x+1)(3+2)  
+= (λx.x+1)(5)  
+= (5+1)  
+= 6  
+
