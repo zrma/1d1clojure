@@ -70,3 +70,13 @@
 λx.λy.x^{47}y  
 = 47  
 
+## [Lambda Calculus - Evaluating Expressions #4](https://www.hackerrank.com/challenges/lambda-calculus-evaluate-the-expression-1/problem)  
+
+* λx.λy.x(xy)  
+
+λx.λy.x(xy)  
+= λx.λy.x^{2}y  
+= 2   
+
+
+
