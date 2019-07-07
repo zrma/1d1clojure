@@ -40,4 +40,13 @@
 (λg.((λf.((λx.(f (x x)))(λx.(f (x x))))) g))    
 = (λg.(((λx.(g (x x)))(λx.(g (x x))))))      
 = (λg.(λx.(g (x x)))(λx.(g (x x))))    
--> Can't Reduce (Infinite loop)  
+-> Can't Reduce (Infinite loop)
+
+## [Lambda Calculus - Evaluating Expressions #1](https://www.hackerrank.com/challenges/lambda-calculus-getting-started/problem)  
+
+* (λx.x+1)3  
+
+(λx.x+1)3  
+= (3+1)  
+= 4  
+
