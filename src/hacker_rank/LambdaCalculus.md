@@ -60,3 +60,13 @@
 = (5+1)  
 = 6  
 
+## [Lambda Calculus - Evaluating Expressions #3](https://www.hackerrank.com/challenges/lambda-calculus-evaluate-the-expression/problem)  
+
+> [Church encoding](https://en.wikipedia.org/wiki/Church_encoding)
+> n = λx.λy.x^{n}y
+
+* λx.λy.x^{47}y  
+
+λx.λy.x^{47}y  
+= 47  
+
