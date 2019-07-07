@@ -78,5 +78,9 @@
 = λx.λy.x^{2}y  
 = 2   
 
+## [Lambda Calculus - Evaluating Expressions #5](https://www.hackerrank.com/challenges/lambda-calculus-evaluate-the-expression-2/problem)  
 
+* λx.λy.y  
 
+λx.λy.y  
+= 0
