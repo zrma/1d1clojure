@@ -1,4 +1,5 @@
-(ns hacker-rank.fp)
+(ns hacker-rank.fp
+  (:require [hacker-rank.utils :refer :all]))
 
 (defn solve-me-first [x y]
   (+ x y))
@@ -41,10 +42,6 @@
        (rest)
        (reduce *)))
 
-(defn round [precision n]
-  (let [factor (Math/pow 10 precision)]
-    (/ (Math/round (* n factor)) factor)))
-
 (defn evaluating-exponential [n]
   (loop [i 10
          res 1.0]
@@ -63,6 +60,7 @@
 ;; 콘솔 읽기 유틸 함수
 ;
 ;(require '[clojure.string :as str])
+;
 ;(defn read-split []
 ;  (map #(Long/parseLong %) (-> (read-line)
 ;                               (str/split #" "))))

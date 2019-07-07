@@ -1,4 +1,5 @@
-(ns hacker-rank.tutorials.tutorial-10days-of-statistics)
+(ns hacker-rank.tutorials.tutorial-10days-of-statistics
+  (:require [hacker-rank.utils :refer :all]))
 
 (defn mean [coll]
   (let [sum (float (apply + coll))
@@ -26,3 +27,11 @@
                    val
                    (map key))]
     (first (sort modes))))
+
+(defn weighted-mean [nums weights]
+  (let [weighted-sum (apply + weights)
+        weighted-num (apply + (map (fn [[num weight]] (* num weight))
+                                   (map vector nums weights)))]
+    (if (pos? weighted-num)
+      (round 1 (/ weighted-num weighted-sum))
+      (float 0))))
