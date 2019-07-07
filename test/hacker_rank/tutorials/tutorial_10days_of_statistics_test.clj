@@ -8,6 +8,12 @@
   (is (= [0.0 43900.6]
          (map mean [[] [64630 11735 14216 99233 14470 4978 73429 38120 51135 67060]]))))
 
+(deftest median-test
+  (is (= [0.0 38120 44627.5]
+         (map median [[]
+                      [64630 11735 14216 99233 14470 4978 73429 38120 51135]
+                      [64630 11735 14216 99233 14470 4978 73429 38120 51135 67060]]))))
+
 (deftest mean-median-mode-test
   (testing ["Day 0: Mean, Median, and Mode"
             "https://www.hackerrank.com/challenges/s10-basic-statistics/problem"])
@@ -18,5 +24,6 @@
 (deftest weighted-mean-test
   (testing ["Day 0: Weighted Mean"
             "https://www.hackerrank.com/challenges/s10-weighted-mean/problem"]
-    (is (= 32.0
-           (weighted-mean [10 40 30 50 20] [1 2 3 4 5])))))
+    (is (= [32.0 0.0]
+           (map (fn [[nums weights]] (weighted-mean nums weights))
+                [[[10 40 30 50 20] [1 2 3 4 5]] [[] []]])))))

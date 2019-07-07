@@ -12,12 +12,14 @@
   (let [sorted (sort coll)
         cnt (count sorted)
         half (quot cnt 2)]
-    (if (odd? cnt)
-      (nth sorted half)
-      (let [bottom (dec half)
-            bottom-val (nth sorted bottom)
-            top-val (nth sorted half)]
-        (mean [bottom-val top-val])))))
+    (if (pos? cnt)
+      (if (odd? cnt)
+        (nth sorted half)
+        (let [bottom (dec half)
+              bottom-val (nth sorted bottom)
+              top-val (nth sorted half)]
+          (mean [bottom-val top-val])))
+      (float 0))))
 
 (defn mode [coll]
   (let [freq (frequencies coll)
