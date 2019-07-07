@@ -12,29 +12,29 @@
    (for [_ (range n)]
      (println "Hello World"))))
 
-(defn list-replication [n l]
-  (mapcat (partial repeat n) l))
+(defn list-replication [n coll]
+  (mapcat (partial repeat n) coll))
 
-(defn filter-array [delim l]
-  (filter #(> delim %) l))
+(defn filter-array [delim coll]
+  (filter #(> delim %) coll))
 
-(defn filter-positions-in-a-list [l]
-  (take-nth 2 (rest l)))
+(defn filter-positions-in-a-list [coll]
+  (take-nth 2 (rest coll)))
 
 (defn array-of-n-elements [n]
   (range n))
 
-(defn reverse-a-list [n]
-  (reverse n))
+(defn reverse-a-list [coll]
+  (reverse coll))
 
-(defn sum-of-odd-elements [l]
-  (reduce + (filter odd? l)))
+(defn sum-of-odd-elements [coll]
+  (reduce + (filter odd? coll)))
 
-(defn list-length [l]
-  (count l))
+(defn list-length [coll]
+  (count coll))
 
-(defn update-list [l]
-  (map (fn [x] (if (<= 0 x) x (- x))) l))
+(defn update-list [coll]
+  (map (fn [x] (if (<= 0 x) x (- x))) coll))
 
 (defn fact [n]
   (->> (inc n)
@@ -65,14 +65,14 @@
 ;  (map #(Long/parseLong %) (-> (read-line)
 ;                               (str/split #" "))))
 
-(defn area-under-curves-and-volume-of-revolving-a-curve [a b [left right']]
+(defn area-under-curves-and-volume-of-revolving-a-curve [a b [begin end']]
   (let [delta 0.001
-        right (+ right' delta)]
+        end (+ end' delta)]
     (vector (* delta
                (reduce + (map #(algebraic-expr a b %)
-                              (range left right delta))))
+                              (range begin end delta))))
             (* Math/PI
                (reduce + (map #(-> (algebraic-expr a b %)
                                    (Math/pow 2)
                                    (* delta))
-                              (range left right delta)))))))
+                              (range begin end delta)))))))

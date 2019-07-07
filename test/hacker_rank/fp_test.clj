@@ -97,6 +97,6 @@
             "https://www.hackerrank.com/challenges/area-under-curves-and-volume-of-revolving-a-curv/problem"]
     (is (= [[414.02299999997854 36024.18118228868]
             [2441841.2093355106 26307357812556.656]]
-           (map (fn [[a b n]] (area-under-curves-and-volume-of-revolving-a-curve a b n))
+           (map (fn [[a b boundary]] (area-under-curves-and-volume-of-revolving-a-curve a b boundary))
                 [[[1 2] [0 1] [2 20]]
                  [[1 2 3 4 5] [6 7 8 9 10] [1 4]]])))))
