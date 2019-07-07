@@ -62,8 +62,8 @@
 
 ## [Lambda Calculus - Evaluating Expressions #3](https://www.hackerrank.com/challenges/lambda-calculus-evaluate-the-expression/problem)  
 
-> [Church encoding](https://en.wikipedia.org/wiki/Church_encoding)
-> n = λx.λy.x^{n}y
+> [Church encoding](https://en.wikipedia.org/wiki/Church_encoding)  
+> <sub>n = λx.λy.x^{n}y</sub>
 
 * λx.λy.x^{47}y  
 
