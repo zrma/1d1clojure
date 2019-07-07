@@ -6,13 +6,18 @@
 
 A Clojure library designed to ... well, that part is up to you.
 
+## Requirements
+
+* [JDK](https://aws.amazon.com/ko/corretto/)  
+* [Leiningen](https://leiningen.org/)
+
 ## Usage
 
-FIXME
+> $ make test
 
 ## License
 
-Copyright © 2019 FIXME
+Copyright © 2019 [zrma](https://github.com/zrma)
 
 This program and the accompanying materials are made available under the
 terms of the Eclipse Public License 2.0 which is available at
