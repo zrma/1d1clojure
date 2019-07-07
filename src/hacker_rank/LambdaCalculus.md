@@ -22,3 +22,12 @@
 = (λz.w)  
 = [(λz.w)/z]w    
 = w  
+
+## Lambda Calculus - Reductions #3
+   
+* ((λx.(x x))(λx.(x x)))
+
+((λx.(x x))(λx.(x x)))  
+= (λx.(x x))(λx.(x x))  
+= (λx.(x x))  
+-> Can't Reduce (Infinite loop)  
