@@ -27,3 +27,11 @@
     (is (= [32.0 0.0]
            (map (fn [[nums weights]] (weighted-mean nums weights))
                 [[[10 40 30 50 20] [1 2 3 4 5]] [[] []]])))))
+
+(deftest quartiles-test
+  (testing ["Day 1: Quartiles"
+            "https://www.hackerrank.com/challenges/s10-quartiles/problem"]
+    (is (= [[6 12 16] [7 13 15] [4 11 15]]
+           (map quartiles [[3 7 8 5 12 14 21 13 18]
+                           [3 7 8 5 12 14 21 15 18 14]
+                           [4 17 7 14 18 12 3 16 10 4 4 12]])))))

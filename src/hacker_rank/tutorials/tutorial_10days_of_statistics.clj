@@ -37,3 +37,12 @@
     (if (pos? weighted-num)
       (round 1 (/ weighted-num weighted-sum))
       (float 0))))
+
+(defn quartiles [coll]
+  (let [sorted (sort coll)
+        q2 (median sorted)
+        lower (take-while (complement #(<= q2 %)) sorted)
+        upper (drop-while (complement #(< q2 %)) sorted)
+        q1 (median lower)
+        q3 (median upper)]
+    (map int [q1 q2 q3])))
