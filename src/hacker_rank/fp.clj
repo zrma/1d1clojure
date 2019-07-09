@@ -59,8 +59,9 @@
 
 ;; 콘솔 읽기 유틸 함수
 ;
-;(require '[clojure.string :as str])
+;(def n (Integer/parseInt (clojure.string/trim (read-line))))
 ;
+;(require '[clojure.string :as str])
 ;(defn read-split []
 ;  (map #(Long/parseLong %) (-> (read-line)
 ;                               (str/split #" "))))
