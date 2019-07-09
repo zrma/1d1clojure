@@ -41,8 +41,12 @@
 (defn quartiles [coll]
   (let [sorted (sort coll)
         q2 (median sorted)
-        lower (take-while (complement #(<= q2 %)) sorted)
-        upper (drop-while (complement #(< q2 %)) sorted)
+        cnt (count sorted)
+        half (quot cnt 2)
+        [lower upper'] (split-at half sorted)
+        upper (if (odd? cnt)
+                (rest upper')
+                upper')
         q1 (median lower)
         q3 (median upper)]
     (map int [q1 q2 q3])))
