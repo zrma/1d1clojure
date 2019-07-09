@@ -50,3 +50,9 @@
         q1 (median lower)
         q3 (median upper)]
     (map int [q1 q2 q3])))
+
+(defn inter-quartile-range [num-coll frequency-coll]
+  (let [total (mapcat #(repeat %2 %1) num-coll frequency-coll)
+        [q1 _ q3] (quartiles total)
+        result (- q3 q1)]
+    (float result)))

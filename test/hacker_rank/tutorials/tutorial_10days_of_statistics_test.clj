@@ -35,3 +35,17 @@
            (map quartiles [[3 7 8 5 12 14 21 13 18]
                            [3 7 8 5 12 14 21 15 18 14]
                            [4 17 7 14 18 12 3 16 10 4 4 12]])))))
+
+(deftest inter-quartile-range-test
+  (testing ["Day 1: Interquartile Range"
+            "https://www.hackerrank.com/challenges/s10-interquartile-range/problem"]
+    (is (= [9.0 5.0 20.0 8.0]
+           (map (fn [[num-coll frequency-coll]] (inter-quartile-range num-coll frequency-coll))
+                [[[6 12 8 10 20 16]
+                  [5 4 3 2 1 5]]
+                 [[10 40 30 50 20 10 40 30 50 20 1 2 3 4 5 6 7 8 9 10]
+                  [1 2 3 4 5 6 7 8 9 10 10 40 30 50 20 10 40 30 50 20]]
+                 [[10 40 30 50 20 10 40 30 50 20]
+                  [1 2 3 4 5 6 7 8 9 10]]
+                 [[6 12 8 10 20 16]
+                  [5 6 7 8 9 10]]])))))
