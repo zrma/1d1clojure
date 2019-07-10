@@ -38,7 +38,7 @@
       (round 1 (/ weighted-num weighted-sum))
       (float 0))))
 
-(defn quartiles [coll]
+(defn quartiles [coll scale-fn]
   (let [sorted (sort coll)
         q2 (median sorted)
         cnt (count sorted)
@@ -48,10 +48,10 @@
                 upper')
         q1 (median lower)
         q3 (median upper)]
-    (map int [q1 q2 q3])))
+    (map scale-fn [q1 q2 q3])))
 
 (defn inter-quartile-range [num-coll frequency-coll]
   (let [total (mapcat #(repeat %2 %1) num-coll frequency-coll)
-        [q1 _ q3] (quartiles total)
+        [q1 _ q3] (quartiles total #(round 1 %))
         result (- q3 q1)]
-    (float result)))
+    (round 1 result)))

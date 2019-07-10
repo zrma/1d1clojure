@@ -32,12 +32,12 @@
   (testing ["Day 1: Quartiles"
             "https://www.hackerrank.com/challenges/s10-quartiles/problem"]
     (is (= [[6 12 16] [7 13 15] [4 11 15]]
-           (map quartiles [[3 7 8 5 12 14 21 13 18]
-                           [3 7 8 5 12 14 21 15 18 14]
-                           [4 17 7 14 18 12 3 16 10 4 4 12]])))))
+           (map #(quartiles % int) [[3 7 8 5 12 14 21 13 18]
+                                    [3 7 8 5 12 14 21 15 18 14]
+                                    [4 17 7 14 18 12 3 16 10 4 4 12]])))))
 
 (deftest inter-quartile-range-test
-  (testing ["Day 1: Interquartile Range"
+  (testing ["Day 1: Inter-quartile Range"
             "https://www.hackerrank.com/challenges/s10-interquartile-range/problem"]
     (is (= [9.0 5.0 20.0 8.0]
            (map (fn [[num-coll frequency-coll]] (inter-quartile-range num-coll frequency-coll))
