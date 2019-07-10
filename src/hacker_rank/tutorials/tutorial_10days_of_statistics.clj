@@ -55,3 +55,9 @@
         [q1 _ q3] (quartiles total #(round 1 %))
         result (- q3 q1)]
     (round 1 result)))
+
+(defn std-dev [coll]
+  (let [m (mean coll)
+        cnt (count coll)
+        variance (apply + (map #(Math/pow (- % m) 2) coll))]
+    (round 1 (Math/sqrt (/ variance cnt)))))

@@ -49,3 +49,9 @@
                   [1 2 3 4 5 6 7 8 9 10]]
                  [[6 12 8 10 20 16]
                   [5 6 7 8 9 10]]])))))
+
+(deftest std-dev-test
+  (testing ["Day 1: Standard Deviation"
+            "https://www.hackerrank.com/challenges/s10-standard-deviation/problem"]
+    (is (= 14.1
+           (std-dev [10 40 30 50 20])))))
