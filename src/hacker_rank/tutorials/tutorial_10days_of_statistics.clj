@@ -63,9 +63,9 @@
     (round 1 (Math/sqrt (/ variance cnt)))))
 
 (defn binomial-distribution [n p k]
-  (let [res (/ (apply * [(Math/pow p k) (Math/pow (- 1 p) (- n k)) (fact n)])
-               (apply * [(fact k) (fact (- n k))]))]
-    res))
+  (apply * [(combination n k)
+            (Math/pow p k)
+            (Math/pow (- 1 p) (- n k))]))
 
 (defn binomial-distribution1 [boy girl]
   (let [n 6

@@ -13,3 +13,9 @@
             "factorial"]
     (is (= [1 2 6 24 120]
            (map fact [1 2 3 4 5])))))
+
+(deftest combination-test
+  (testing ["utility"
+            "combination"]
+    (is (= [10 (combination 5 2)]
+           (map (fn [[n k]] (combination n k)) [[5 3] [5 3]])))))
