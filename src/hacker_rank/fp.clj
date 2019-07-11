@@ -36,12 +36,6 @@
 (defn update-list [coll]
   (map (fn [x] (if (<= 0 x) x (- x))) coll))
 
-(defn fact [n]
-  (->> (inc n)
-       (range)
-       (rest)
-       (reduce *)))
-
 (defn evaluating-exponential [n]
   (loop [i 10
          res 1.0]

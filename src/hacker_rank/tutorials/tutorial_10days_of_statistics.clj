@@ -61,3 +61,14 @@
         cnt (count coll)
         variance (apply + (map #(Math/pow (- % m) 2) coll))]
     (round 1 (Math/sqrt (/ variance cnt)))))
+
+(defn binomial-distribution [n p k]
+  (let [res (/ (apply * [(Math/pow p k) (Math/pow (- 1 p) (- n k)) (fact n)])
+               (apply * [(fact k) (fact (- n k))]))]
+    res))
+
+(defn binomial-distribution1 [boy girl]
+  (let [n 6
+        p (/ boy (+ boy girl))
+        k-list (range 3 (inc n))]
+    (round 3 (apply + (map #(binomial-distribution n p %) k-list)))))

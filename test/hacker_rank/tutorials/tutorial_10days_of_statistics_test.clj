@@ -55,3 +55,9 @@
             "https://www.hackerrank.com/challenges/s10-standard-deviation/problem"]
     (is (= 14.1
            (std-dev [10 40 30 50 20])))))
+
+(deftest binomial-distribution1-test
+  (testing ["Day 4: Binomial Distribution I"
+            "https://www.hackerrank.com/challenges/s10-binomial-distribution-1/problem"]
+    (is (= 0.696
+           (binomial-distribution1 1.09 1)))))

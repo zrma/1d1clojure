@@ -74,12 +74,6 @@
     (is (= [2 4 3 1 23 4 54]
            (update-list [2 -4 3 -1 23 -4 -54])))))
 
-(deftest fact-test
-  (testing ["utility"
-            "factorial"]
-    (is (= [1 2 6 24 120]
-           (map fact [1 2 3 4 5])))))
-
 (deftest evaluating-exponential-test
   (testing ["Evaluating e^x"
             "https://www.hackerrank.com/challenges/eval-ex/problem"]
