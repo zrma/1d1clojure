@@ -61,3 +61,9 @@
             "https://www.hackerrank.com/challenges/s10-binomial-distribution-1/problem"]
     (is (= 0.696
            (binomial-distribution1 1.09 1)))))
+
+(deftest binomial-distribution2-test
+  (testing ["Day 4: Binomial Distribution II"
+            "https://www.hackerrank.com/challenges/s10-binomial-distribution-2/problem"]
+    (is (= [0.891 0.342]
+           (binomial-distribution2 12 10)))))

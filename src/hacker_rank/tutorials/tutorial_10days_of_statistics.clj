@@ -72,3 +72,9 @@
         p (/ boy (+ boy girl))
         k-list (range 3 (inc n))]
     (round 3 (apply + (map #(binomial-distribution n p %) k-list)))))
+
+(defn binomial-distribution2 [p n]
+  (let [f (fn [k] (binomial-distribution n (/ p 100) k))
+        res1 (map f (range 3))
+        res2 (map f (range 2 (inc n)))]
+    [(round 3 (apply + res1)) (round 3 (apply + res2))]))
