@@ -78,3 +78,10 @@
         res1 (map f (range 3))
         res2 (map f (range 2 (inc n)))]
     [(round 3 (apply + res1)) (round 3 (apply + res2))]))
+
+(defn geometric-distribution [p k]
+  (* (Math/pow (- 1 p) (dec k)) p))
+
+(defn geometric-distribution1 [numerator denominator k]
+  (round 3 (geometric-distribution (/ numerator denominator) k)))
+

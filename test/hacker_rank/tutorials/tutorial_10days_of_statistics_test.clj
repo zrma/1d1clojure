@@ -67,3 +67,9 @@
             "https://www.hackerrank.com/challenges/s10-binomial-distribution-2/problem"]
     (is (= [0.891 0.342]
            (binomial-distribution2 12 10)))))
+
+(deftest geometric-distribution1-test
+  (testing ["Day 4: Geometric Distribution I"
+            "https://www.hackerrank.com/challenges/s10-geometric-distribution-1/problem"]
+    (is (= 0.066
+           (geometric-distribution1 1 3 5)))))
