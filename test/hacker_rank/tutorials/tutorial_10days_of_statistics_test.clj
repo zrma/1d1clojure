@@ -79,3 +79,9 @@
             "https://www.hackerrank.com/challenges/s10-geometric-distribution-2/problem"]
     (is (= 0.868
            (geometric-distribution2 1 3 5)))))
+
+(deftest poisson-distribution1-test
+  (testing ["Day 5: Poisson Distribution II"
+            "https://www.hackerrank.com/challenges/s10-poisson-distribution-1/problem"]
+    (is (= 0.067
+           (poisson-distribution1 5 2.5)))))

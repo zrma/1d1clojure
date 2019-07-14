@@ -88,3 +88,11 @@
 (defn geometric-distribution2 [numerator denominator k]
   (round 3 (apply + (map #(geometric-distribution (/ numerator denominator) %)
                          (range 1 (inc k))))))
+
+(defn poisson-distribution [n λ]
+  (let [numerator (* (Math/pow λ n) (Math/exp (- λ)))
+        denominator (fact n)]
+    (/ numerator denominator)))
+
+(defn poisson-distribution1 [n λ]
+  (round 3 (poisson-distribution n λ)))
