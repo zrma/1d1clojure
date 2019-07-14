@@ -85,3 +85,6 @@
 (defn geometric-distribution1 [numerator denominator k]
   (round 3 (geometric-distribution (/ numerator denominator) k)))
 
+(defn geometric-distribution2 [numerator denominator k]
+  (round 3 (apply + (map #(geometric-distribution (/ numerator denominator) %)
+                         (range 1 (inc k))))))

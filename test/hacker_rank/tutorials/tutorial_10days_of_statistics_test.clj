@@ -73,3 +73,9 @@
             "https://www.hackerrank.com/challenges/s10-geometric-distribution-1/problem"]
     (is (= 0.066
            (geometric-distribution1 1 3 5)))))
+
+(deftest geometric-distribution2-test
+  (testing ["Day 4: Geometric Distribution II"
+            "https://www.hackerrank.com/challenges/s10-geometric-distribution-2/problem"]
+    (is (= 0.868
+           (geometric-distribution2 1 3 5)))))
