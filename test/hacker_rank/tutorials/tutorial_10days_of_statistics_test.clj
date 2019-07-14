@@ -1,5 +1,6 @@
 (ns hacker-rank.tutorials.tutorial-10days-of-statistics-test
   (:require [clojure.test :refer :all])
+  (:require [hacker-rank.utils :refer :all])
   (:require [hacker-rank.tutorials.tutorial-10days-of-statistics :refer :all]))
 
 (deftest mean-test
@@ -88,6 +89,17 @@
 
 (deftest poisson-distribution2-test
   (testing ["Day 5: Poisson Distribution II"
-            ""]
+            "https://www.hackerrank.com/challenges/s10-poisson-distribution-2/problem"]
     (is (= [226.176 286.100]
            (poisson-distribution2 0.88 1.55)))))
+
+(deftest probability-density-function-test
+  (testing ["" ""]
+    (is (= (round 10 (/ 1 (* (Math/sqrt 2) (Math/sqrt Math/PI))))
+           (probability-density-function 0 1 0)))))
+
+(deftest normal-distribution1-test
+  (testing ["Day 5: Normal Distribution I"
+            "https://www.hackerrank.com/challenges/s10-normal-distribution-1/problem"]
+    (is (= [0.401 0.341]
+           (normal-distribution1 20 2 19.5 20 22)))))

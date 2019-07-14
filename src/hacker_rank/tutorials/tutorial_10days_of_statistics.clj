@@ -102,3 +102,32 @@
         x-square2 (+ poisson2 (Math/pow poisson2 2))]
     (map #(round 3 %) [(+ 160 (* 40 x-square1))
                        (+ 128 (* 40 x-square2))])))
+
+(defn probability-density-function [μ σ x]
+  (let [ex (- (/ (Math/pow (- x μ) 2)
+                 (* 2 σ σ)))
+        numerator (Math/exp ex)
+        denominator (* σ
+                       (Math/sqrt (* 2 Math/PI)))]
+    (round 10 (/ numerator denominator))))
+
+(defn error-function [x]
+  (let [t (/ 1 (+ 1 (* 0.47047 (Math/abs x))))
+        poly (* t (+ 0.3480242
+                     (* t
+                        (- (* t 0.7478556)
+                           0.0958798))))
+        res (- 1 (* poly (Math/exp (- (* x x)))))]
+    (if (>= x 0)
+      res
+      (- res))))
+
+(defn cumulative-distribution-function [μ σ x]
+  (* (/ 1 2)
+     (+ 1 (error-function (/ (- x μ) (* σ (Math/sqrt 2)))))))
+
+(defn normal-distribution1 [μ σ x1 x2-1 x2-2]
+  (let [norm1 (cumulative-distribution-function μ σ x1)
+        norm2-1 (cumulative-distribution-function μ σ x2-1)
+        norm2-2 (cumulative-distribution-function μ σ x2-2)]
+    (map #(round 3 %) [norm1 (- norm2-2 norm2-1)])))
