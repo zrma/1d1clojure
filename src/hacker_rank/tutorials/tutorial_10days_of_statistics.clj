@@ -112,7 +112,7 @@
     (round 10 (/ numerator denominator))))
 
 (defn error-function [x]
-  (let [t (/ 1 (+ 1 (* 0.47047 (Math/abs x))))
+  (let [t (/ 1 (inc (* 0.47047 (Math/abs x))))
         poly (* t (+ 0.3480242
                      (* t
                         (- (* t 0.7478556)
@@ -124,7 +124,7 @@
 
 (defn cumulative-distribution-function [μ σ x]
   (* (/ 1 2)
-     (+ 1 (error-function (/ (- x μ) (* σ (Math/sqrt 2)))))))
+     (inc (error-function (/ (- x μ) (* σ (Math/sqrt 2)))))))
 
 (defn normal-distribution1 [μ σ x1 x2-1 x2-2]
   (let [norm1 (cumulative-distribution-function μ σ x1)
