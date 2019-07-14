@@ -96,3 +96,9 @@
 
 (defn poisson-distribution1 [n λ]
   (round 3 (poisson-distribution n λ)))
+
+(defn poisson-distribution2 [poisson1 poisson2]
+  (let [x-square1 (+ poisson1 (Math/pow poisson1 2))
+        x-square2 (+ poisson2 (Math/pow poisson2 2))]
+    (map #(round 3 %) [(+ 160 (* 40 x-square1))
+                       (+ 128 (* 40 x-square2))])))

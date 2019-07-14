@@ -85,3 +85,9 @@
             "https://www.hackerrank.com/challenges/s10-poisson-distribution-1/problem"]
     (is (= 0.067
            (poisson-distribution1 5 2.5)))))
+
+(deftest poisson-distribution2-test
+  (testing ["Day 5: Poisson Distribution II"
+            ""]
+    (is (= [226.176 286.100]
+           (poisson-distribution2 0.88 1.55)))))
