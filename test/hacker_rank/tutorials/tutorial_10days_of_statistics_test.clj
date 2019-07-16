@@ -103,3 +103,9 @@
             "https://www.hackerrank.com/challenges/s10-normal-distribution-1/problem"]
     (is (= [0.401 0.341]
            (normal-distribution1 20 2 19.5 20 22)))))
+
+(deftest normal-distribution2-test
+  (testing ["Day 5: Normal Distribution II"
+            "https://www.hackerrank.com/challenges/s10-normal-distribution-2/problem"]
+    (is (= [15.87 84.13 15.87]
+           (normal-distribution2 70 10 80 60)))))

@@ -112,15 +112,14 @@
     (round 10 (/ numerator denominator))))
 
 (defn error-function [x]
-  (let [t (/ 1 (inc (* 0.47047 (Math/abs x))))
-        poly (* t (+ 0.3480242
-                     (* t
-                        (- (* t 0.7478556)
-                           0.0958798))))
-        res (- 1 (* poly (Math/exp (- (* x x)))))]
-    (if (>= x 0)
-      res
-      (- res))))
+  (let [sign (if (< x 0) -1 1)
+        p 0.3275911
+        t (/ 1 (inc (* p (Math/abs x))))
+        arr [0.254829592 -0.284496736 1.421413741 -1.453152027 1.061405429]
+        res (- 1 (* t
+                    (Math/exp (- (Math/pow x 2)))
+                    (reduce #(+ (* %1 t) %2) (reverse arr))))]
+    (* sign res)))
 
 (defn cumulative-distribution-function [μ σ x]
   (* (/ 1 2)
@@ -131,3 +130,8 @@
         norm2-1 (cumulative-distribution-function μ σ x2-1)
         norm2-2 (cumulative-distribution-function μ σ x2-2)]
     (map #(round 3 %) [norm1 (- norm2-2 norm2-1)])))
+
+(defn normal-distribution2 [μ σ x y]
+  (map #(round 2 (* 100 %)) [(- 1 (cumulative-distribution-function μ σ x))
+                             (- 1 (cumulative-distribution-function μ σ y))
+                             (cumulative-distribution-function μ σ y)]))
