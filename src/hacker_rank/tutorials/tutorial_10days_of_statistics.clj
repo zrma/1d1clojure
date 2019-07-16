@@ -112,7 +112,7 @@
     (round 10 (/ numerator denominator))))
 
 (defn error-function [x]
-  (let [sign (if (< x 0) -1 1)
+  (let [sign (if (neg? x) -1 1)
         p 0.3275911
         t (/ 1 (inc (* p (Math/abs x))))
         arr [0.254829592 -0.284496736 1.421413741 -1.453152027 1.061405429]
