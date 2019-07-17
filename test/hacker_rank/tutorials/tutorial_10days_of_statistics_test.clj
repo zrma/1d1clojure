@@ -94,7 +94,7 @@
            (poisson-distribution2 0.88 1.55)))))
 
 (deftest probability-density-function-test
-  (testing ["" ""]
+  (testing ["utility" "pdf"]
     (is (= (round 10 (/ 1 (* (Math/sqrt 2) (Math/sqrt Math/PI))))
            (probability-density-function 0 1 0)))))
 
