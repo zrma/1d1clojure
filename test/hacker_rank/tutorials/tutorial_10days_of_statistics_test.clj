@@ -109,3 +109,9 @@
             "https://www.hackerrank.com/challenges/s10-normal-distribution-2/problem"]
     (is (= [15.87 84.13 15.87]
            (normal-distribution2 70 10 80 60)))))
+
+(deftest the-central-limit-theorem-1-test
+  (testing ["Day 6: The Central Limit Theorem I"
+            "https://www.hackerrank.com/challenges/s10-the-central-limit-theorem-1/problem"]
+    (is (= 0.0098
+           (the-central-limit-theorem-1 9800 49 205 15)))))

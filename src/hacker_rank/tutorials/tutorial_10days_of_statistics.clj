@@ -135,3 +135,8 @@
   (map #(round 2 (* 100 %)) [(- 1 (cumulative-distribution-function μ σ x))
                              (- 1 (cumulative-distribution-function μ σ y))
                              (cumulative-distribution-function μ σ y)]))
+
+(defn the-central-limit-theorem-1 [max-quantity boxes μ σ]
+  (let [μ' (* μ boxes)
+        σ' (* σ (Math/sqrt boxes))]
+    (round 4 (cumulative-distribution-function μ' σ' max-quantity))))
