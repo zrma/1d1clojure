@@ -136,7 +136,10 @@
                              (- 1 (cumulative-distribution-function μ σ y))
                              (cumulative-distribution-function μ σ y)]))
 
-(defn the-central-limit-theorem-1 [max-quantity boxes μ σ]
-  (let [μ' (* μ boxes)
-        σ' (* σ (Math/sqrt boxes))]
+(defn the-central-limit-theorem-1 [max-quantity x μ σ]
+  (let [μ' (* μ x)
+        σ' (* σ (Math/sqrt x))]
     (round 4 (cumulative-distribution-function μ' σ' max-quantity))))
+
+(defn the-central-limit-theorem-2 [max-quantity x μ σ]
+  (the-central-limit-theorem-1 max-quantity x μ σ))

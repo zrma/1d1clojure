@@ -115,3 +115,9 @@
             "https://www.hackerrank.com/challenges/s10-the-central-limit-theorem-1/problem"]
     (is (= 0.0098
            (the-central-limit-theorem-1 9800 49 205 15)))))
+
+(deftest the-central-limit-theorem-2-test
+  (testing ["Day 6: The Central Limit Theorem II"
+            "https://www.hackerrank.com/challenges/s10-the-central-limit-theorem-2/problem"]
+    (is (= 0.6915
+           (the-central-limit-theorem-2 250 100 2.4 2.0)))))
