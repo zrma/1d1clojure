@@ -143,3 +143,7 @@
 
 (defn the-central-limit-theorem-2 [max-quantity x μ σ]
   (the-central-limit-theorem-1 max-quantity x μ σ))
+
+(defn the-central-limit-theorem-3 [n μ σ z-score]
+  (vector (round 2 (- μ (* z-score (/ σ (Math/sqrt n)))))
+          (round 2 (+ μ (* z-score (/ σ (Math/sqrt n)))))))
