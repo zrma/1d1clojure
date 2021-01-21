@@ -1,0 +1,29 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request 
+# events but only for the master and develop branch
+on:
+  push:
+    branches: [ master, develop ]
+  pull_request:
+    branches: [ master, develop ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: action test
+    steps:
+      - uses: actions/checkout@v2
+      - uses: DeLaGuardo/setup-graalvm@master
+        with:
+          graalvm-version: '19.3.1.java11'
+      - uses: DeLaGuardo/setup-clojure@master
+        with:
+          cli: '1.10.1.469'
+          lein: 2.9.4
+      - run: make fmt
+      - run: make lint
+      - run: make cover
