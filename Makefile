@@ -8,10 +8,7 @@ endif
 VENV ?= . env/bin/activate
 
 
-.PHONY: test fmt lint all cov cover
-
-test:
-	lein test
+.PHONY: fmt lint all cov cover
 
 fmt:
 	lein cljfmt fix
@@ -22,7 +19,7 @@ lint:
 	lein kibit
 	lein ancient
 
-all: fmt lint test cov
+all: fmt lint cov
 
 cov:
 	lein cloverage
