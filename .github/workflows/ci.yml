@@ -17,6 +17,8 @@ jobs:
     name: action test
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - uses: DeLaGuardo/setup-graalvm@master
         with:
           graalvm-version: '19.3.1.java11'
@@ -27,3 +29,23 @@ jobs:
       - run: make fmt
       - run: make lint
       - run: make cover
+      - uses: actions/upload-artifact@v2
+        with:
+          name: coverage
+          path: target/coverage/*
+
+  report:
+    needs: test
+    runs-on: ubuntu-latest
+    name: action report
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/download-artifact@v2
+        with:
+          name: coverage
+      - run: bash <(curl -s https://codecov.io/bash) -f codecov.json
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: lcov.info
