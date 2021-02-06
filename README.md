@@ -1,8 +1,8 @@
 # 1d1clojure
 
-[![Build Status](https://travis-ci.org/zrma/1d1clojure.svg?branch=master)](https://travis-ci.org/zrma/1d1clojure)
-[![Coverage Status](https://coveralls.io/repos/github/zrma/clojure/badge.svg?branch=master)](https://coveralls.io/github/zrma/clojure?branch=master)
-[![Codecov Status](https://codecov.io/gh/zrma/clojure/branch/master/graphs/badge.svg)](https://codecov.io/gh/zrma/clojure)
+[![CI](https://github.com/zrma/1d1clojure/workflows/CI/badge.svg)](https://github.com/zrma/1d1clojure/actions)
+[![Coverage Status](https://coveralls.io/repos/github/zrma/1d1clojure/badge.svg?branch=master)](https://coveralls.io/github/zrma/1d1clojure?branch=master)
+[![Codecov Status](https://codecov.io/gh/zrma/1d1clojure/branch/master/graphs/badge.svg)](https://codecov.io/gh/zrma/1d1clojure)
 
 1 day 1 coding with clojure
 
